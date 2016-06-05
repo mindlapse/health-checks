@@ -1,5 +1,4 @@
 var supertest = require("supertest")
-var should = require("should")
 var timeout = 2000
 
 module.exports = function(tape) {
