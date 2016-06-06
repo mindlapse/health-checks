@@ -25,6 +25,17 @@ module.exports = function(tape) {
                 t.end();
             })
     })
+    
+    tape("calls amazon", {timeout}, function(t) {
+        console.log("Checking amazon")
+        supertest.agent("http://www.amazon.ca")
+            .get("/")
+            .expect(200)
+            .end(function(err, res) {
+                t.false(err)
+                t.end();
+            })
+    })
 }
 
 
